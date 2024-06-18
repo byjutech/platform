@@ -40,6 +40,7 @@
   import SelectWorkspace from './SelectWorkspace.svelte'
   import SignupForm from './SignupForm.svelte'
   import LoginIcon from './icons/LoginIcon.svelte'
+  import DisabledForm from './DisabledForm.svelte'
 
   import loginBack from '../../img/login_back.png'
   import loginBack2x from '../../img/login_back_2x.png'
@@ -132,21 +133,21 @@
           {#if page === 'login'}
             <LoginForm {navigateUrl} />
           {:else if page === 'signup'}
-            <SignupForm />
+            <DisabledForm />
           {:else if page === 'createWorkspace'}
-            <CreateWorkspaceForm />
+            <DisabledForm />
           {:else if page === 'password'}
-            <PasswordRequest />
+            <DisabledForm />
           {:else if page === 'recovery'}
-            <PasswordRestore />
+            <DisabledForm />
           {:else if page === 'selectWorkspace'}
             <SelectWorkspace {navigateUrl} />
           {:else if page === 'join'}
             <Join />
           {:else if page === 'confirm'}
-            <Confirmation />
+            <DisabledForm />
           {:else if page === 'confirmationSend'}
-            <ConfirmationSend />
+            <DisabledForm />
           {:else if page === 'auth'}
             <Auth />
           {/if}
