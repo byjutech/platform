@@ -202,7 +202,7 @@
     },
     {
       "commandKind": "global",
-      "name": "docker:up:platform.byjus.onl",
+      "name": "docker:up:platform:byjus:onl",
       "summary": "Up development build",
       "description": "Up development build",
       "safeForSimultaneousRushProcesses": true,
