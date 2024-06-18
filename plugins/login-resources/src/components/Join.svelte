@@ -23,7 +23,6 @@
   import presentation from '@hcengineering/presentation'
   import { workbenchId } from '@hcengineering/workbench'
   import { onMount } from 'svelte'
-  import { BottomAction } from '..'
   import { loginAction, recoveryAction } from '../actions'
   import login from '../plugin'
 
@@ -90,24 +89,6 @@
     }
   }
 
-  const signUpAction: BottomAction = {
-    caption: login.string.DoNotHaveAnAccount,
-    i18n: login.string.SignUp,
-    func: () => (page = 'signUp')
-  }
-
-  const loginJoinAction: BottomAction = {
-    caption: login.string.HaveAccount,
-    i18n: login.string.LogIn,
-    func: () => (page = 'login')
-  }
-
-  $: bottom = page === 'login' ? [signUpAction] : [loginJoinAction]
-  $: secondaryButtonLabel = page === 'login' ? login.string.SignUp : undefined
-  $: secondaryButtonAction = () => {
-    page = 'signUp'
-  }
-
   onMount(() => {
     void check()
   })
@@ -137,8 +118,6 @@
   {fields}
   {object}
   {action}
-  {secondaryButtonLabel}
-  {secondaryButtonAction}
-  bottomActions={[...bottom, loginAction, recoveryAction]}
+  bottomActions={[loginAction, recoveryAction]}
   withProviders
 />

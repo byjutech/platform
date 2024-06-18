@@ -7,8 +7,11 @@
     export let bottomActions: BottomAction[] = [loginAction, recoveryAction]
 </script>
 
-<div class="container">
-<h3 style="color: var(--theme-content-color);align-self: center;">This action is disabled, please connect with admin.</h3>
+<div class="container"
+  style:padding={$deviceInfo.docWidth <= 480 ? '.25rem 1.25rem' : '4rem 5rem'}
+  style:min-height={$deviceInfo.docHeight > 720 ? '42rem' : '0'}
+>
+<h3 style:color={'var(--theme-content-color)'} style:align-self={'center'}">This action is disabled, please connect with admin.</h3>
     {#if bottomActions.length}
     <div class="footer">
       {#each bottomActions as action}
