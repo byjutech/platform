@@ -201,6 +201,14 @@
       "shellCommand": "cd ./dev && docker compose up -d --force-recreate"
     },
     {
+      "commandKind": "global",
+      "name": "docker:up:platform.byjus.onl",
+      "summary": "Up development build",
+      "description": "Up development build",
+      "safeForSimultaneousRushProcesses": true,
+      "shellCommand": "cd ./dev && docker compose -f docker-compose.platform.byjus.onl.yaml up -d --force-recreate"
+    },
+    {
       "summary": "docker:staging",
       "commandKind": "phased",
       "name": "docker:staging",
