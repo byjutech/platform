@@ -137,17 +137,17 @@
           {:else if page === 'createWorkspace'}
             <DisabledForm />
           {:else if page === 'password'}
-            <PasswordRequest />
+            <DisabledForm />
           {:else if page === 'recovery'}
-            <PasswordRestore />
+            <DisabledForm />
           {:else if page === 'selectWorkspace'}
             <SelectWorkspace {navigateUrl} />
           {:else if page === 'join'}
             <Join />
           {:else if page === 'confirm'}
-            <Confirmation />
+            <DisabledForm />
           {:else if page === 'confirmationSend'}
-            <ConfirmationSend />
+            <DisabledForm />
           {:else if page === 'auth'}
             <Auth />
           {/if}

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { loginAction, recoveryAction } from '../actions'
     import { BottomAction, getHref } from '..'
-    import { Label } from '@hcengineering/ui'
+    import { Label, deviceOptionsStore as deviceInfo } from '@hcengineering/ui'
     import { NavLink } from '@hcengineering/presentation'
 
     export let bottomActions: BottomAction[] = [loginAction, recoveryAction]
