@@ -1,12 +1,14 @@
 <script lang="ts">
     import { loginAction, recoveryAction } from '../actions'
     import { BottomAction, getHref } from '..'
+    import { Label } from '@hcengineering/ui'
+    import { NavLink } from '@hcengineering/presentation'
 
     export let bottomActions: BottomAction[] = [loginAction, recoveryAction]
 </script>
 
 <div class="container">
-<h3 style="color: var(--theme-content-color);align-self: center;">This action is disabled</h3>
+<h3 style="color: var(--theme-content-color);align-self: center;">This action is disabled, please connect with admin.</h3>
     {#if bottomActions.length}
     <div class="footer">
       {#each bottomActions as action}
