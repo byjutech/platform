@@ -49,6 +49,15 @@ export function registerGoogle (
       measureCtx.info('Provider auth handler', { email, type: 'google' })
       if (email !== undefined) {
         try {
+          const GOOGLE_CLIENT_ALLOWED_DOMAINS = process.env.GOOGLE_CLIENT_ALLOWED_DOMAINS
+          if (GOOGLE_CLIENT_ALLOWED_DOMAINS !== undefined) {
+            const GOOGLE_CLIENT_ALLOW_DOMAINS = GOOGLE_CLIENT_ALLOWED_DOMAINS.toLowerCase().split(',')
+            const emailDomain = email.split('@').pop().toLowerCase()
+            if (!GOOGLE_CLIENT_ALLOW_DOMAINS.includes(emailDomain)) {
+              throw new Error('email domain not allowed')
+            }
+          }
+
           if (ctx.query?.state != null) {
             const loginInfo = await joinWithProvider(
               measureCtx,
